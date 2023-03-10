@@ -4,6 +4,8 @@ import wordsToNumbers from 'words-to-numbers';
 import alanBtn from '@alan-ai/alan-sdk-web';
 
 import logo from './images/logo.png';
+import imglogo from './images/imglogo.png';
+
 import { NewsCards, Modal } from './components';
 import useStyles from './styles';
 
@@ -50,11 +52,11 @@ const App = () => {
       <div className={classes.logoContainer}>
         {newsArticles.length ? (
           <div className={classes.infoContainer}>
-            <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Open article number [4]</Typography></div>
-            <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Go back</Typography></div>
+            <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Open article number [4]</Typography></div>
+            <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Go back</Typography></div>
           </div>
         ) : null}
-        <img src="https://alan.app/voice/images/previews/preview.jpg" className={classes.alanLogo} alt="logo" />
+        <img src={imglogo} className={classes.alanLogo} alt="logo" />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -62,10 +64,12 @@ const App = () => {
         <div className={classes.footer}>
           <Typography variant="body1" component="h2">
             Created by
-            <a className={classes.link} href="https://www.linkedin.com/in/adrian-hajdin/"> Adrian Hajdin</a> -
-            <a className={classes.link} href="http://youtube.com/javascriptmastery"> JavaScript Mastery</a>
+            <a className={classes.link} href="https://www.linkedin.com/in/shyam-m-aa9026240/"> Shyam M</a> -
           </Typography>
-          <img className={classes.image} src={logo} height="50px" alt="JSMastery logo" />
+          <img className={classes.image} src={logo} height="30px" alt="Github logo" />
+          <Typography variant="body1" component="h2">
+            -<a className={classes.link} href="https://github.com/Maxxjx"> Maxxjx</a>
+          </Typography>
         </div>
       ) : null}
     </div>
