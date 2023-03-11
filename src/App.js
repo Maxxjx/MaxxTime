@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     alanBtn({
-    //  me
+    //  me--
       // key: '4bfb4282fea544a2497aa27089f9a6bb2e956eca572e1d8b807a3e2338fdd0dc/stage',
       // sample--
       key: '29da5f8838fdc054497aa27089f9a6bb2e956eca572e1d8b807a3e2338fdd0dc/stage',
@@ -53,7 +53,7 @@ const App = () => {
         {newsArticles.length ? (
           <div className={classes.infoContainer}>
             <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Open article number [4]</Typography></div>
-            <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Go back</Typography></div>
+            <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Help ,For help with the voice commands</Typography></div>
           </div>
         ) : null}
         <img src={imglogo} className={classes.alanLogo} alt="logo" />
