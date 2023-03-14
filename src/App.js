@@ -3,8 +3,8 @@ import { Typography } from '@material-ui/core';
 import wordsToNumbers from 'words-to-numbers';
 import alanBtn from '@alan-ai/alan-sdk-web';
 
-import logo from './images/logo.png';
-import imglogo from './images/imglogo.png';
+import whlogo from './images/whlogo.png';
+import baimg from './images/baimg.png';
 
 import { NewsCards, Modal } from './components';
 import useStyles from './styles';
@@ -53,10 +53,10 @@ const App = () => {
         {newsArticles.length ? (
           <div className={classes.infoContainer}>
             <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Open article number [4]</Typography></div>
-            <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Help ,For help with the voice commands</Typography></div>
+            <div className={classes.card}><Typography variant="h5" component="h4">Try saying: <br /><br />Go back </Typography></div>
           </div>
         ) : null}
-        <img src={imglogo} className={classes.alanLogo} alt="logo" />
+        <img src={baimg} className={classes.alanLogo} alt="logo" />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -66,7 +66,7 @@ const App = () => {
             Created by
             <a className={classes.link} href="https://www.linkedin.com/in/shyam-m-aa9026240/"> Shyam M</a> -
           </Typography>
-          <img className={classes.image} src={logo} height="30px" alt="Github logo" />
+          <img className={classes.image} src={whlogo} height="30px" alt="Github logo" />
           <Typography variant="body1" component="h2">
             -<a className={classes.link} href="https://github.com/Maxxjx"> Maxxjx</a>
           </Typography>
