@@ -17,7 +17,7 @@ const App = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    alanBtn({
+    const alanBtnInstance = alanBtn({
     //  me--
       // key: '4bfb4282fea544a2497aa27089f9a6bb2e956eca572e1d8b807a3e2338fdd0dc/stage',
       // sample--
@@ -35,16 +35,49 @@ const App = () => {
           const article = articles[parsedNumber - 1];
 
           if (parsedNumber > articles.length) {
-            alanBtn().playText('Please try that again...');
+            alanBtnInstance.playText('Please try that again...');
           } else if (article) {
             window.open(article.url, '_blank');
-            alanBtn().playText('Opening...');
+            alanBtnInstance.playText('Opening...');
           } else {
-            alanBtn().playText('Please try that again...');
+            alanBtnInstance.playText('Please try that again...');
           }
         }
       },
     });
+    alanBtnInstance.activate();
+    alanBtnInstance.playText("Hello! I'm Maxx.How can I help you?");
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+
+    recognition.onresult = (event) => {
+      const current = event.resultIndex;
+      // eslint-disable-next-line prefer-destructuring
+      const transcript = event.results[current][0].transcript;
+      // console.log(transcript);
+      if (transcript.toLowerCase() === 'wake up') {
+        alanBtnInstance.activate();
+        alanBtnInstance.playText('i am listening....');
+      }
+    };
+
+    recognition.onend = () => {
+      if (!alanBtnInstance.isActive()) {
+        // console.log('started one');
+        recognition.start();
+      }
+    };
+
+    if (!alanBtnInstance.isActive()) {
+      recognition.start();
+      // console.log('started two');
+    } else {
+      recognition.stop();
+      // console.log('stopped');
+    }
+    // console.log('this is it',alanBtnInstance.isActive());
   }, []);
 
   return (
