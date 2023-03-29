@@ -46,38 +46,38 @@ const App = () => {
       },
     });
     alanBtnInstance.activate();
-    alanBtnInstance.playText("Hello! I'm Maxx.How can I help you?");
+    alanBtnInstance.playText("Hello! I'm Alan. How can I help you?");
 
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    recognition.continuous = true;
+    // const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    // const recognition = new SpeechRecognition();
+    // recognition.continuous = true;
 
-    recognition.onresult = (event) => {
-      const current = event.resultIndex;
-      // eslint-disable-next-line prefer-destructuring
-      const transcript = event.results[current][0].transcript;
-      // console.log(transcript);
-      if (transcript.toLowerCase() === 'wake up') {
-        alanBtnInstance.activate();
-        alanBtnInstance.playText('i am listening....');
-      }
-    };
+    // recognition.onresult = (event) => {
+    //   const current = event.resultIndex;
+    //   // eslint-disable-next-line prefer-destructuring
+    //   const transcript = event.results[current][0].transcript;
+    //   console.log(transcript.toLowerCase());
+    //   if (transcript.toLowerCase() === ' wake up') {
+    //     alanBtnInstance.activate();
+    //     alanBtnInstance.playText('i am listening....');
+    //   }
+    // };
 
-    recognition.onend = () => {
-      if (!alanBtnInstance.isActive()) {
-        // console.log('started one');
-        recognition.start();
-      }
-    };
+    // recognition.onend = () => {
+    //   if (!alanBtnInstance.isActive()) {
+    //     // console.log('started one');
+    //     recognition.start();
+    //   }
+    // };
 
-    if (!alanBtnInstance.isActive()) {
-      recognition.start();
-      // console.log('started two');
-    } else {
-      recognition.stop();
-      // console.log('stopped');
-    }
-    // console.log('this is it',alanBtnInstance.isActive());
+    // if (!alanBtnInstance.isActive()) {
+    //   recognition.start();
+    //   // console.log('started two');
+    // } else {
+    //   recognition.stop();
+    //   // console.log('stopped');
+    // }
+    // // console.log('this is it',alanBtnInstance.isActive());
   }, []);
 
   return (
