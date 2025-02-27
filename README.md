@@ -36,6 +36,7 @@ sh
 npm start
 Open your browser and navigate to http://localhost:3000
 Click on the Alan AI button and ask it to search news about any topic.
+(make sure you have an alan ai api key)
 ## Technologies Used
 JavaScript
 HTML
