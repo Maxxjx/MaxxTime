@@ -18,10 +18,7 @@ const App = () => {
 
   useEffect(() => {
     const alanBtnInstance = alanBtn({
-    //  me--
-      // key: '4bfb4282fea544a2497aa27089f9a6bb2e956eca572e1d8b807a3e2338fdd0dc/stage',
-      // sample--
-      key: '29da5f8838fdc054497aa27089f9a6bb2e956eca572e1d8b807a3e2338fdd0dc/stage',
+      key: process.env.Alan_key, // Use the key from .env
       onCommand: ({ command, articles, number }) => {
         if (command === 'newHeadlines') {
           setNewsArticles(articles);
